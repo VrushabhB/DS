@@ -142,6 +142,22 @@ class LinkedList {
     this.head = this.tail;
     this.tail = prev;
   }
+  checkForCycle(root) {
+    if (!root) throw new Error("List is empty");
+    let slow = root;
+    let fast = root.next;
+    while (slow !== fast) {
+      if (!fast || !fast.next) {
+        return false;
+      }
+      slow = slow.next;
+      fast = fast.next.next;
+    }
+    return true;
+  }
+  createCycle() {
+    this.tail.next = this.head;
+  }
   // Print the linked list
   print() {
     let current = this.head;

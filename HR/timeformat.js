@@ -1,7 +1,3 @@
-function readLine() {
-  return inputString[currentLine++];
-}
-
 /*
  * Complete the 'timeConversion' function below.
  *
